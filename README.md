@@ -1,23 +1,31 @@
-# LeetCode Solutions Viewer
+# My LeetCode Solutions
 
-Next.js app to browse and search local LeetCode solutions stored in `solutions/*/solution.*`.
+This repository is my personal archive of LeetCode solutions, organized by problem slug and language.
 
-## Features
+## How Solutions Are Organized
 
-- Search by problem title, slug, or language
-- Filter by language
-- Paginated problem list
-- Dedicated viewer page per solution
-- Metadata parsing from source headers (`Problem`, `LeetCode`, `Language`, `Runtime`, `Memory`, `Submitted`)
-- No database (all data read from local files)
+- Each problem is stored in: `solutions/<problem-slug>/`
+- Each solution file follows: `solution.<ext>`
+- Examples:
+  - `solutions/basic-calculator-ii/solution.js`
+  - `solutions/valid-parentheses/solution.rs`
 
-## Project Structure
+## Metadata Format (Optional but Recommended)
 
-- `solutions/<slug>/solution.*`: source of truth for all solutions
-- `app/`: Next.js App Router UI
-- `lib/solutions.js`: file-system index + metadata parser
+Many files include header metadata used by the local viewer:
 
-## Local Development
+```js
+// Problem: Basic Calculator II
+// LeetCode: https://leetcode.com/problems/basic-calculator-ii/
+// Language: JavaScript
+// Runtime: 50 ms
+// Memory: 45 MB
+// Submitted: 2026-02-20
+```
+
+## Local Solution Viewer
+
+This repo also includes a Next.js app to browse/search solutions.
 
 ```bash
 npm install
@@ -26,30 +34,8 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Deploy on Vercel
+## Project Structure
 
-1. Push this folder to a GitHub repo.
-2. In Vercel, click **Add New Project** and import the repo.
-3. Keep defaults:
-   - Framework Preset: `Next.js`
-   - Build Command: `next build`
-   - Output Directory: `.next`
-4. Deploy.
-
-Or with CLI:
-
-```bash
-npm i -g vercel
-vercel
-```
-
-Then production deploy:
-
-```bash
-vercel --prod
-```
-
-## Notes
-
-- This app does not require external APIs or a DB.
-- The index is cached in memory for a short TTL to reduce repeated filesystem scans.
+- `solutions/`: all problem solutions (source of truth)
+- `app/`: Next.js UI
+- `lib/solutions.js`: file indexer and metadata parser
