@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'LeetCode Solutions Viewer',
-  description: 'Search and browse local LeetCode solutions',
+  title: 'LeetCode Solutions Atlas',
+  description: 'Discover, filter, and inspect local LeetCode solutions with rich metadata',
 };
 
 export default function RootLayout({ children }) {

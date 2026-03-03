@@ -1,8 +1,21 @@
-# My LeetCode Solutions
+# My LeetCode Solutions Atlas
 
 This repository is my personal archive of LeetCode solutions, organized by problem slug and language.
 
 Live site: https://my-leetcode-solutions.vercel.app/
+
+## What Is New
+
+- Dashboard cards for total solutions, language count, current-year activity, and metadata coverage
+- Submission timeline chart for recent monthly activity
+- Advanced filters: query, language, file extension, metadata-only mode, page size, sort mode
+- Dual layouts: grid and list views
+- Smart sorting: newest/oldest, title A-Z/Z-A, runtime fastest/slowest
+- Language cloud shortcuts
+- Deterministic random matching solution picker
+- Detail page enhancements: line-numbered code view, copy-to-clipboard, code stats, and neighboring solutions
+- Related solutions suggestions (by language + slug token overlap)
+- Brighter visual redesign with responsive behavior for desktop/mobile
 
 ## How Solutions Are Organized
 
@@ -41,5 +54,6 @@ Production: https://my-leetcode-solutions.vercel.app/
 ## Project Structure
 
 - `solutions/`: all problem solutions (source of truth)
-- `app/`: Next.js UI
-- `lib/solutions.js`: file indexer and metadata parser
+- `app/`: Next.js UI (dashboard + detail pages)
+- `components/`: client components (for example: copy-code button)
+- `lib/solutions.js`: file indexer, metadata parser, and analytics helpers
